@@ -1,12 +1,12 @@
 'use strict';
-function Car(make, model, year, color, passengers, convertible, mileage) {
-    this.make = make;
-    this.model = model;
-    this.year = year;
-    this.color = color;
-    this.passengers = passengers;
-    this.convertible = convertible;
-    this.mileage = mileage;
+function Car(params) {
+    this.make = params.make;
+    this.model = params.model;
+    this.year = params.year;
+    this.color = params.color;
+    this.passengers = params.passengers;
+    this.convertible = params.convertible;
+    this.mileage = params.mileage;
     this.started = false;
 
     this.start = function () {
@@ -27,11 +27,65 @@ function Car(make, model, year, color, passengers, convertible, mileage) {
     };
 }
 
-let chevy = new Car('Chevy', 'Bel Air', 1957, 'red', 2, false, 1021);
-let cadi = new Car('GM', 'Cadillac', 1955, 'tan', 5, false, 12892);
-let taxi = new Car('Webville Motors', 'Taxi', 1955, 'yellow', 4, false, 281341);
-let fiat = new Car('Fiat', '500', 1957, 'Medium Blue', 2, false, 88000);
-let testCar = new Car('Webville Motors', 'Test Car', 2014, 'marine', 2, true, 21);
+let chevyParams = {
+    make: 'Chevy',
+    model: 'Bel Air',
+    year: 1957,
+    color: 'red',
+    passengers: 2,
+    convertible: false,
+    mileage: 1021
+};
+
+let chevy = new Car(chevyParams);
+
+let cadiParams = {
+    make: 'GM',
+    model: 'Cadillac',
+    year: 1955,
+    color: 'tan',
+    passengers: 5,
+    convertible: false,
+    mileage: 12892
+};
+
+let cadi = new Car(cadiParams);
+
+let taxiParams = {
+    make: 'Webville Motors',
+    model: 'Taxi',
+    year: 1955,
+    color: 'yellow',
+    passengers: 4,
+    convertible: false,
+    mileage: 281341
+};
+
+let taxi = new Car(taxiParams);
+
+let fiatParams = {
+    make: 'Fiat',
+    model: '500',
+    year: 1957,
+    color: 'Medium Blue',
+    passengers: 2,
+    convertible: false,
+    mileage: 88000
+};
+
+let fiat = new Car(fiatParams);
+
+let testCarParams = {
+    make: 'Webville Motors',
+    model: 'Test Car',
+    year: 2014,
+    color: 'marine',
+    passengers: 2,
+    convertible: true,
+    mileage: 21
+};
+
+let testCar = new Car(testCarParams);
 
 let cars = [chevy, cadi, taxi, fiat, testCar];
 
